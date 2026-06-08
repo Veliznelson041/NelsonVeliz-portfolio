@@ -144,7 +144,7 @@
             </span>
             <span class="t-line" data-delay="1750">
               &nbsp;&nbsp;<span class="t-key">"role"</span>:
-              <span class="t-string"> "Full Stack | Software Developer"</span>,
+              <span class="t-string"> "Full Stack Developer"</span>,
             </span>
             <span class="t-line" data-delay="1900">
               &nbsp;&nbsp;<span class="t-key">"stack"</span>:
@@ -216,8 +216,9 @@
       <div class="about-text">
         <p class="reveal">
           Hola, soy <strong>Nelson</strong>, tengo <strong>23 años</strong> y soy de
-          <strong>Catamarca, Argentina</strong>. Me recibi de 
-          <strong>Técnico Superior en Desarrollo de Software</strong>.
+          <strong>Catamarca, Argentina</strong>. Estoy culminando mi carrera como
+          <strong>Técnico Superior en Desarrollo de Software</strong>, con la última materia
+          a punto de rendirse.
         </p>
         <p class="reveal">
           Me dedico al desarrollo de software desde hace varios años, especializándome en el stack
@@ -225,16 +226,17 @@
           educativa completa (<strong>EduLink</strong>) y un sistema de gestión ganadera para el
           gobierno provincial (<strong>SIGRAMS</strong>).
         </p>
-        <!-- <p class="reveal">
+        <p class="reveal">
           Actualmente trabajo en <strong>MAEMA</strong>, donde me encargo del mantenimiento y
           soporte técnico de hardware y software, además de colaborar en el desarrollo de sistemas
           internos y automatizaciones con herramientas como <strong>Trello</strong> y
           <strong>AppSheets</strong>.
-        </p> -->
+        </p>
         <p class="reveal">
           Tengo un gran interés en la <strong>ciberseguridad</strong>, el OSINT y el forense
-          digital. Estoy aprendiendo <strong>Maltego</strong> y Ethical Hacking. Mi objetivo sería
-          complementar mi tecnicatura y obtener un titulo de grado.
+          digital. Estoy aprendiendo <strong>Maltego</strong> y Ethical Hacking. Mi objetivo es
+          ingresar a la universidad para complementar mi tecnicatura y obtener el grado de
+          <strong>Ingeniero o Licenciado en Informática</strong>.
         </p>
         <p class="reveal">
           Antes de dedicarme al mundo tech, serví como <strong>militar en el Escuadrón de
@@ -244,11 +246,11 @@
 
         <div class="about-badges reveal">
           <span class="badge">🇦🇷 Catamarca, Argentina</span>
-          <span class="badge">🎓 Técnico Superior</span>
+          <span class="badge">🎓 Casi Técnico Superior</span>
           <span class="badge">⚔️ Ex-Militar Ejército AR</span>
           <span class="badge">🔐 Ciberseguridad & OSINT</span>
-          <!-- <span class="badge">💼 MAEMA</span>
-          <span class="badge">🚀 Buscando la universidad</span> -->
+          <span class="badge">💼 MAEMA</span>
+          <span class="badge">🚀 Buscando la universidad</span>
         </div>
       </div>
 
@@ -267,13 +269,13 @@
             <div class="info-value">Técnico Superior en Desarrollo de Software</div>
           </div>
         </div>
-        <!-- <div class="info-card reveal">
+        <div class="info-card reveal">
           <div class="info-icon">💼</div>
           <div class="info-content">
             <div class="info-label">Trabajo actual</div>
             <div class="info-value">MAEMA — Soporte Técnico & Dev</div>
           </div>
-        </div> -->
+        </div>
         <div class="info-card reveal">
           <div class="info-icon">⚙️</div>
           <div class="info-content">
@@ -375,7 +377,7 @@
           <h3 class="timeline-role">Soporte Técnico & Desarrollador</h3>
           <p class="timeline-org">MAEMA — Dirección de Sistemas, Catamarca</p>
           <p class="timeline-desc">
-            Mantenimiento y reparación de equipos de oficina.
+            Mantenimiento y reparación de equipos de oficina (PCs, impresoras, switches, routers).
             Desarrollo del sistema de gestión del canon de riego. Automatizaciones con Trello
             y AppSheets para el área administrativa.
           </p>
@@ -412,9 +414,9 @@
       <div class="timeline-item">
         <div class="timeline-dot">🎓</div>
         <div class="timeline-content">
-          <div class="timeline-period">2023 — 2025</div>
+          <div class="timeline-period">2022 — 2025</div>
           <h3 class="timeline-role">Tecnicatura Superior en Desarrollo de Software</h3>
-          <p class="timeline-org">Instituto San Martin, Catamarca</p>
+          <p class="timeline-org">Instituto Educativo, Catamarca</p>
           <p class="timeline-desc">
             Formación técnica en desarrollo de software: programación orientada a objetos,
             base de datos relacionales, redes, sistemas operativos, metodologías ágiles y
@@ -543,29 +545,70 @@
 
       <!-- Form -->
       <div class="reveal">
-        <form id="contact-form" class="contact-form" novalidate>
+        <!--
+          data-netlify="true"  → Netlify captura las submissions automáticamente
+          netlify-honeypot      → Campo trampa invisible para bots (antispam)
+          name="contact"        → Nombre del formulario en el panel de Netlify
+        -->
+        <form id="contact-form" class="contact-form" novalidate
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field">
+
+          <!-- Campo oculto requerido por Netlify Forms -->
+          <input type="hidden" name="form-name" value="contact" />
+
+          <!-- Honeypot: trampa para bots — invisible para humanos -->
+          <div style="display:none" aria-hidden="true">
+            <label>No completar si sos humano:
+              <input name="bot-field" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+
           <div class="form-group">
             <label class="form-label" for="name">Nombre</label>
             <input type="text" id="name" name="name" class="form-input"
-                   placeholder="Tu nombre completo" required />
+                   placeholder="Tu nombre completo"
+                   autocomplete="name"
+                   minlength="2" maxlength="80"
+                   required />
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email</label>
             <input type="email" id="email" name="email" class="form-input"
-                   placeholder="tu@email.com" required />
+                   placeholder="tu@email.com"
+                   autocomplete="email"
+                   maxlength="120"
+                   required />
           </div>
           <div class="form-group">
             <label class="form-label" for="subject">Asunto</label>
             <input type="text" id="subject" name="subject" class="form-input"
-                   placeholder="¿De qué se trata?" required />
+                   placeholder="¿De qué se trata?"
+                   maxlength="120"
+                   required />
           </div>
           <div class="form-group">
             <label class="form-label" for="message">Mensaje</label>
             <textarea id="message" name="message" class="form-textarea"
-                      placeholder="Contame tu idea o propuesta..." required></textarea>
+                      placeholder="Contame tu idea o propuesta..."
+                      minlength="10" maxlength="2000"
+                      required></textarea>
           </div>
-          <button type="submit" class="form-btn">Enviar mensaje →</button>
+
+          <!-- Indicador de caracteres restantes -->
+          <p id="char-counter" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);text-align:right;margin-top:-0.75rem;margin-bottom:1rem;">
+            0 / 2000
+          </p>
+
+          <button type="submit" class="form-btn" id="form-submit-btn">
+            Enviar mensaje →
+          </button>
           <p id="form-success" class="form-success">✓ ¡Mensaje enviado! Te respondo pronto.</p>
+          <p id="form-error" class="form-success" style="color:#f87171;display:none;">
+            ✗ Algo salió mal. Por favor intentá de nuevo.
+          </p>
         </form>
       </div>
     </div>

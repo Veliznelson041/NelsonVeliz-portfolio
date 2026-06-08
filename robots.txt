@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+ 
+Sitemap: https://nelsonveliz.com.ar/sitemap.xml
+ 

@@ -1,0 +1,83 @@
+# =============================================
+#  NELSON VELIZ PORTFOLIO — netlify.toml
+#  Configuración de despliegue + seguridad
+# =============================================
+
+# ── Build settings ────────────────────────────
+[build]
+  publish = "."          # Carpeta raíz (el index.html está aquí)
+
+# ── Security Headers (todas las rutas) ────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+
+    # Previene que la página sea cargada en un iframe
+    # → evita Clickjacking
+    X-Frame-Options = "DENY"
+
+    # Fuerza al navegador a NO adivinar el tipo de contenido
+    # → evita MIME-type sniffing attacks
+    X-Content-Type-Options = "nosniff"
+
+    # Controla qué información se envía en el Referer header
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Fuerza HTTPS por 1 año y lo incluye en preload lists
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Deshabilita acceso a cámara, micrófono, geolocalización
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # Content Security Policy — la más importante
+    # Define exactamente de dónde se puede cargar cada tipo de recurso
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline';
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: https:;
+      connect-src 'self';
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self';
+    """
+
+    # Elimina la cabecera que revela que el sitio usa Netlify
+    X-Powered-By = ""
+
+# ── Cache: assets estáticos (1 año) ───────────
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── HTML sin caché (siempre fresco) ───────────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ── Redirects útiles ──────────────────────────
+# Redirige www → sin www (elige uno consistente)
+[[redirects]]
+  from  = "https://www.nelsonveliz.com.ar/*"
+  to    = "https://nelsonveliz.com.ar/:splat"
+  status = 301
+  force  = true
+
+# Página 404 personalizada
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
