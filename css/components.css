@@ -1,0 +1,279 @@
+/* =============================================
+   NELSON VELIZ PORTFOLIO — components.css
+   Reusable UI components & utilities
+   ============================================= */
+
+/* ── Active Nav Link ────────────────────────── */
+.nav-links a.active {
+  color: var(--accent-teal);
+}
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ── Tooltip ────────────────────────────────── */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+}
+[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Tag Chip ───────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+}
+.tag:hover {
+  color: var(--accent-teal);
+  border-color: var(--border);
+  background: rgba(0,212,170,0.06);
+}
+.tag.teal {
+  color: var(--accent-teal);
+  border-color: rgba(0,212,170,0.25);
+  background: rgba(0,212,170,0.07);
+}
+.tag.violet {
+  color: var(--accent-violet);
+  border-color: rgba(168,85,247,0.25);
+  background: rgba(168,85,247,0.07);
+}
+.tag.amber {
+  color: var(--accent-amber);
+  border-color: rgba(245,158,11,0.25);
+  background: rgba(245,158,11,0.07);
+}
+
+/* ── Back to Top Button ─────────────────────── */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 42px; height: 42px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 900;
+}
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#back-to-top:hover {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+  box-shadow: var(--glow-sm);
+}
+
+/* ── Horizontal scroll tech strip ───────────── */
+.tech-strip {
+  overflow: hidden;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,212,170,0.02);
+}
+.tech-strip-inner {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: scrollStrip 25s linear infinite;
+}
+.tech-strip-inner:hover { animation-play-state: paused; }
+.tech-strip-item {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.tech-strip-item .strip-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent-teal);
+  opacity: 0.4;
+}
+@keyframes scrollStrip {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Section Number ─────────────────────────── */
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(0,212,170,0.04);
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Highlight Pill ─────────────────────────── */
+.highlight {
+  display: inline;
+  background: rgba(0,212,170,0.1);
+  color: var(--accent-teal);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* ── Divider with Label ─────────────────────── */
+.labeled-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+.labeled-divider::before,
+.labeled-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.labeled-divider span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+/* ── Skill Category Header ──────────────────── */
+.skill-category-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.skill-category-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── About section illustration ─────────────── */
+.about-illustration {
+  width: 100%; max-width: 340px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.about-illustration::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0,212,170,0.08), transparent 70%);
+}
+
+/* ── Notification Toast ─────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--bg-card);
+  border: 1px solid var(--accent-teal);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-teal);
+  z-index: 9998;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: var(--glow-sm);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Skills panel transition ────────────────── */
+.skills-panel {
+  display: none;
+}
+.skills-panel.active {
+  display: grid;
+  animation: fadeInScale 0.35s ease both;
+}
+
+/* ── Flag emoji decoration ──────────────────── */
+.flag-ar {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1;
+}
+
+/* ── Responsive utilities ───────────────────── */
+.hidden-mobile { display: block; }
+.visible-mobile { display: none; }
+
+@media (max-width: 600px) {
+  .hidden-mobile  { display: none; }
+  .visible-mobile { display: block; }
+  .section-num { font-size: 3.5rem; top: 2rem; right: 1rem; }
+  #back-to-top { bottom: 1.25rem; right: 1.25rem; }
+}

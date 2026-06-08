@@ -1,0 +1,291 @@
+/* =============================================
+   NELSON VELIZ PORTFOLIO — animations.css
+   Keyframes, scroll reveals, transitions
+   ============================================= */
+
+/* ── Keyframes ──────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes drawLine {
+  from { width: 0; }
+  to   { width: 24px; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(0, 212, 170, 0.12); }
+  50%       { border-color: rgba(0, 212, 170, 0.35); }
+}
+
+@keyframes dotTrail {
+  0%   { opacity: 0; transform: scale(0); }
+  50%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+@keyframes terminalType {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes morphBlob {
+  0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+/* ── Scroll Reveal System ───────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.reveal-left {
+  transform: translateX(-28px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(28px);
+}
+
+.reveal.reveal-scale {
+  transform: scale(0.93);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays for children */
+.reveal-stagger > *:nth-child(1)  { transition-delay: 0.05s; }
+.reveal-stagger > *:nth-child(2)  { transition-delay: 0.12s; }
+.reveal-stagger > *:nth-child(3)  { transition-delay: 0.19s; }
+.reveal-stagger > *:nth-child(4)  { transition-delay: 0.26s; }
+.reveal-stagger > *:nth-child(5)  { transition-delay: 0.33s; }
+.reveal-stagger > *:nth-child(6)  { transition-delay: 0.40s; }
+.reveal-stagger > *:nth-child(7)  { transition-delay: 0.47s; }
+.reveal-stagger > *:nth-child(8)  { transition-delay: 0.54s; }
+
+/* ── Hero Entry Animations ──────────────────── */
+.hero-status     { animation: slideInDown 0.6s ease 0.2s both; }
+.hero-name       { animation: fadeInUp 0.7s ease 0.35s both; }
+.hero-title-line { animation: fadeInUp 0.7s ease 0.5s both; }
+.hero-description{ animation: fadeInUp 0.7s ease 0.65s both; }
+.hero-actions    { animation: fadeInUp 0.7s ease 0.8s both; }
+.hero-stats      { animation: fadeInUp 0.7s ease 0.95s both; }
+.hero-terminal   { animation: fadeInRight 0.8s ease 0.5s both; }
+
+/* ── Shimmer Text Effect ────────────────────── */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--text-primary) 0%,
+    var(--accent-teal) 40%,
+    var(--text-primary) 60%,
+    var(--accent-teal) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Glow Pulse on Cards ────────────────────── */
+.project-card:hover,
+.info-card:hover {
+  animation: borderGlow 2s ease infinite;
+}
+
+/* ── Floating Terminal ──────────────────────── */
+.hero-terminal {
+  animation: fadeInRight 0.8s ease 0.5s both, float 6s ease-in-out 1.5s infinite;
+}
+
+/* ── Navbar Slide-in ────────────────────────── */
+#navbar {
+  animation: slideInDown 0.5s ease both;
+}
+
+/* ── Progress Bar Fill ──────────────────────── */
+.skill-pip.filling {
+  animation: fillPip 0.3s ease forwards;
+}
+
+@keyframes fillPip {
+  from { background: var(--text-muted); transform: scaleX(0); }
+  to   { background: var(--accent-teal); transform: scaleX(1); }
+}
+
+/* ── Timeline Entry ─────────────────────────── */
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.timeline-item:nth-child(1) { transition-delay: 0.05s; }
+.timeline-item:nth-child(2) { transition-delay: 0.15s; }
+.timeline-item:nth-child(3) { transition-delay: 0.25s; }
+.timeline-item:nth-child(4) { transition-delay: 0.35s; }
+.timeline-item:nth-child(5) { transition-delay: 0.45s; }
+
+/* ── Section Label Line Animation ───────────── */
+.section-label::before {
+  animation: drawLine 0.6s ease forwards;
+}
+
+/* ── Page Load Flash ────────────────────────── */
+.page-flash {
+  position: fixed;
+  inset: 0;
+  background: var(--accent-teal);
+  z-index: 99999;
+  pointer-events: none;
+  animation: pageFlash 0.6s ease forwards;
+}
+@keyframes pageFlash {
+  0%   { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* ── Scanline Effect ────────────────────────── */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.015;
+}
+.scanline-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 212, 170, 1) 2px,
+    rgba(0, 212, 170, 1) 3px
+  );
+}
+
+/* ── Teal accent underline hover ────────────── */
+.teal-hover {
+  position: relative;
+  display: inline-block;
+}
+.teal-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent-teal);
+  transition: width 0.3s ease;
+}
+.teal-hover:hover::after { width: 100%; }
+
+/* ── Button ripple ──────────────────────────── */
+.btn-primary, .btn-outline, .form-btn {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after, .btn-outline::after, .form-btn::after {
+  content: '';
+  position: absolute;
+  inset: 50%;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+  width: 200%; height: 200%;
+}
+.btn-primary:active::after, .btn-outline:active::after, .form-btn:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  transition: 0s;
+}
+
+/* ── Smooth section transitions ─────────────── */
+section { transition: background-color 0.3s ease; }
+
+/* ── Reduced Motion ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-terminal { animation: none; }
+}

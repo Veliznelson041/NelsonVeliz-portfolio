@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nelson Veliz — Desarrollador Full Stack | Python, Django, PostgreSQL | Catamarca, Argentina" />
+  <meta name="keywords" content="Nelson Veliz, desarrollador, full stack, Django, Python, PostgreSQL, portfolio, Catamarca" />
+  <meta property="og:title"       content="Nelson Veliz — Portfolio" />
+  <meta property="og:description" content="Desarrollador Full Stack especializado en Python/Django. Proyectos reales, código limpio." />
+  <meta property="og:type"        content="website" />
+  <title>Nelson Veliz — Portfolio</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <!-- Favicon inline -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+</head>
+<body>
+
+<!-- ── Background Elements ───────────────────── -->
+<div class="grid-bg"></div>
+<div class="scanline-overlay"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<button id="back-to-top" aria-label="Volver arriba">↑</button>
+
+<!-- ── Mobile Menu ───────────────────────────── -->
+<nav class="mobile-menu" role="dialog" aria-label="Menú móvil">
+  <a href="#about">Sobre mí</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Proyectos</a>
+  <a href="#experience">Experiencia</a>
+  <a href="#contact">Contacto</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+<header id="navbar" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Navegación principal">
+      <a href="#hero" class="nav-logo">nv<span>.</span>dev</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#experience">Experiencia</a></li>
+        <li><a href="#contact" class="nav-cta">Contacto</a></li>
+      </ul>
+
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section id="hero" aria-label="Presentación">
+  <div class="hero-glow glow-teal"></div>
+  <div class="hero-glow glow-violet"></div>
+
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          Disponible para nuevas oportunidades
+        </div>
+
+        <h1 class="hero-name">
+          Nelson<br/>
+          <span class="accent">Veliz</span>
+        </h1>
+
+        <p class="hero-title-line">
+          &gt; <span id="typed-text"></span><span class="cursor-blink">|</span>
+        </p>
+
+        <p class="hero-description">
+          Técnico Superior en Desarrollo de Software. Construyo plataformas web reales con
+          <strong>Python, Django y PostgreSQL</strong>. Apasionado por la ciberseguridad, el OSINT
+          y la automatización. Catamarca, Argentina 🇦🇷
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            Ver proyectos
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="#contact" class="btn-outline">Contactarme</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num" data-count="3" data-suffix="">3</span>
+            <span class="hero-stat-label">Proyectos<br/>completados</span>
+          </div>
+          <div>
+            <span class="hero-stat-num" data-count="23" data-suffix="">23</span>
+            <span class="hero-stat-label">Años de<br/>edad</span>
+          </div>
+          <div>
+            <span class="hero-stat-num" data-count="5" data-suffix="+">5+</span>
+            <span class="hero-stat-label">Lenguajes<br/>dominados</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Terminal -->
+      <div class="hero-right">
+        <div class="hero-terminal" role="img" aria-label="Terminal con información de Nelson Veliz">
+          <div class="terminal-bar">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+            <span class="terminal-title">nelson@portfolio ~ whoami</span>
+          </div>
+          <div class="terminal-body">
+            <span class="t-line" data-delay="800">
+              <span class="t-prompt">$</span>
+              <span class="t-cmd"> cat profile.json</span>
+            </span>
+            <span class="t-line" data-delay="1100"><span class="t-comment">{</span></span>
+            <span class="t-line" data-delay="1300">
+              &nbsp;&nbsp;<span class="t-key">"name"</span>:
+              <span class="t-string"> "Nelson Fernando Veliz"</span>,
+            </span>
+            <span class="t-line" data-delay="1450">
+              &nbsp;&nbsp;<span class="t-key">"age"</span>:
+              <span class="t-val"> 23</span>,
+            </span>
+            <span class="t-line" data-delay="1600">
+              &nbsp;&nbsp;<span class="t-key">"location"</span>:
+              <span class="t-string"> "Catamarca, ARG 🇦🇷"</span>,
+            </span>
+            <span class="t-line" data-delay="1750">
+              &nbsp;&nbsp;<span class="t-key">"role"</span>:
+              <span class="t-string"> "Full Stack | Software Developer"</span>,
+            </span>
+            <span class="t-line" data-delay="1900">
+              &nbsp;&nbsp;<span class="t-key">"stack"</span>:
+              <span class="t-comment"> [</span>
+            </span>
+            <span class="t-line" data-delay="2050">
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"Python"</span>,
+              <span class="t-string"> "Django"</span>,
+              <span class="t-string"> "PostgreSQL"</span>
+            </span>
+            <span class="t-line" data-delay="2200">
+              &nbsp;&nbsp;<span class="t-comment">],</span>
+            </span>
+            <span class="t-line" data-delay="2350">
+              &nbsp;&nbsp;<span class="t-key">"interests"</span>:
+              <span class="t-string"> ["Ciberseguridad", "OSINT"]</span>,
+            </span>
+            <span class="t-line" data-delay="2500">
+              &nbsp;&nbsp;<span class="t-key">"status"</span>:
+              <span class="t-string"> "available ✅"</span>
+            </span>
+            <span class="t-line" data-delay="2650"><span class="t-comment">}</span></span>
+            <span class="t-line" data-delay="2900">
+              <span class="t-prompt">$</span>
+              <span class="t-cmd"> _</span>
+              <span class="cursor-blink">|</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Tech Strip ─────────────────────────────── -->
+<div class="tech-strip" aria-hidden="true">
+  <div class="tech-strip-inner">
+    <span class="tech-strip-item"><span class="strip-dot"></span>Python</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Django</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>PostgreSQL</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>JavaScript</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Bootstrap 5</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>REST API</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>WebSockets</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Leaflet.js</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Chart.js</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Git</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Linux</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Nginx</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Gunicorn</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>Maltego</span>
+    <span class="tech-strip-item"><span class="strip-dot"></span>OSINT</span>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════ -->
+<section id="about">
+  <div class="section-num">01</div>
+  <div class="container">
+    <p class="section-label reveal">Sobre mí</p>
+    <h2 class="section-title reveal">Quién soy</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="reveal">
+          Hola, soy <strong>Nelson</strong>, tengo <strong>23 años</strong> y soy de
+          <strong>Catamarca, Argentina</strong>. Me recibi de 
+          <strong>Técnico Superior en Desarrollo de Software</strong>.
+        </p>
+        <p class="reveal">
+          Me dedico al desarrollo de software desde hace varios años, especializándome en el stack
+          <strong>Python / Django / PostgreSQL</strong>. He construido proyectos reales: una plataforma
+          educativa completa (<strong>EduLink</strong>) y un sistema de gestión ganadera para el
+          gobierno provincial (<strong>SIGRAMS</strong>).
+        </p>
+        <!-- <p class="reveal">
+          Actualmente trabajo en <strong>MAEMA</strong>, donde me encargo del mantenimiento y
+          soporte técnico de hardware y software, además de colaborar en el desarrollo de sistemas
+          internos y automatizaciones con herramientas como <strong>Trello</strong> y
+          <strong>AppSheets</strong>.
+        </p> -->
+        <p class="reveal">
+          Tengo un gran interés en la <strong>ciberseguridad</strong>, el OSINT y el forense
+          digital. Estoy aprendiendo <strong>Maltego</strong> y Ethical Hacking. Mi objetivo sería
+          complementar mi tecnicatura y obtener un titulo de grado.
+        </p>
+        <p class="reveal">
+          Antes de dedicarme al mundo tech, serví como <strong>militar en el Escuadrón de
+          Caballería del Ejército Argentino (ESESC)</strong>, experiencia que me dio disciplina,
+          trabajo en equipo y capacidad de resolver problemas bajo presión.
+        </p>
+
+        <div class="about-badges reveal">
+          <span class="badge">🇦🇷 Catamarca, Argentina</span>
+          <span class="badge">🎓 Técnico Superior</span>
+          <span class="badge">⚔️ Ex-Militar Ejército AR</span>
+          <span class="badge">🔐 Ciberseguridad & OSINT</span>
+          <!-- <span class="badge">💼 MAEMA</span>
+          <span class="badge">🚀 Buscando la universidad</span> -->
+        </div>
+      </div>
+
+      <div class="about-cards">
+        <div class="info-card reveal">
+          <div class="info-icon">📍</div>
+          <div class="info-content">
+            <div class="info-label">Ubicación</div>
+            <div class="info-value">Catamarca, Argentina</div>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🎓</div>
+          <div class="info-content">
+            <div class="info-label">Carrera</div>
+            <div class="info-value">Técnico Superior en Desarrollo de Software</div>
+          </div>
+        </div>
+        <!-- <div class="info-card reveal">
+          <div class="info-icon">💼</div>
+          <div class="info-content">
+            <div class="info-label">Trabajo actual</div>
+            <div class="info-value">MAEMA — Soporte Técnico & Dev</div>
+          </div>
+        </div> -->
+        <div class="info-card reveal">
+          <div class="info-icon">⚙️</div>
+          <div class="info-content">
+            <div class="info-label">Stack principal</div>
+            <div class="info-value">Python · Django · PostgreSQL</div>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🎯</div>
+          <div class="info-content">
+            <div class="info-label">Objetivo</div>
+            <div class="info-value">Ing. / Lic. en Informática + Ciberseguridad</div>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🐙</div>
+          <div class="info-content">
+            <div class="info-label">GitHub</div>
+            <div class="info-value">
+              <a href="https://github.com/Veliznelson041" target="_blank" rel="noopener"
+                 style="color:var(--accent-teal)">Veliznelson041</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     SKILLS
+════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="section-num">02</div>
+  <div class="container">
+    <p class="section-label reveal">Tecnologías</p>
+    <h2 class="section-title reveal">Mi Stack</h2>
+    <p class="section-subtitle reveal">
+      Herramientas y lenguajes que uso para construir productos completos, desde el backend hasta el frontend.
+    </p>
+
+    <div class="skills-tabs reveal">
+      <button class="skill-tab active" data-category="backend">Backend</button>
+      <button class="skill-tab" data-category="frontend">Frontend</button>
+      <button class="skill-tab" data-category="database">Bases de Datos</button>
+      <button class="skill-tab" data-category="tools">Herramientas</button>
+    </div>
+
+    <div id="skills-grid" class="skills-grid reveal-stagger"></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PROJECTS
+════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="section-num">03</div>
+  <div class="container">
+    <p class="section-label reveal">Trabajo</p>
+    <h2 class="section-title reveal">Proyectos destacados</h2>
+    <p class="section-subtitle reveal">
+      Aplicaciones reales construidas para resolver problemas concretos: educación, administración pública y gestión interna.
+    </p>
+
+    <div id="projects-grid" class="projects-grid"></div>
+
+    <div style="text-align:center; margin-top: 3rem;">
+      <a href="https://github.com/Veliznelson041" target="_blank" rel="noopener" class="btn-outline reveal">
+        Ver todos en GitHub →
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     EXPERIENCE
+════════════════════════════════════════════ -->
+<section id="experience">
+  <div class="section-num">04</div>
+  <div class="container">
+    <p class="section-label reveal">Historial</p>
+    <h2 class="section-title reveal">Experiencia</h2>
+    <p class="section-subtitle reveal">
+      Mi recorrido combinando el mundo tech con roles en el sector público y la formación continua.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot">💼</div>
+        <div class="timeline-content">
+          <div class="timeline-period">2024 — Presente</div>
+          <h3 class="timeline-role">Soporte Técnico & Desarrollador</h3>
+          <p class="timeline-org">MAEMA — Dirección de Sistemas, Catamarca</p>
+          <p class="timeline-desc">
+            Mantenimiento y reparación de equipos de oficina.
+            Desarrollo del sistema de gestión del canon de riego. Automatizaciones con Trello
+            y AppSheets para el área administrativa.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Django</span>
+            <span class="timeline-tag">AppSheets</span>
+            <span class="timeline-tag">Trello API</span>
+            <span class="timeline-tag">Hardware</span>
+            <span class="timeline-tag">Redes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🐄</div>
+        <div class="timeline-content">
+          <div class="timeline-period">2024</div>
+          <h3 class="timeline-role">Desarrollador — SIGRAMS</h3>
+          <p class="timeline-org">Dirección de Ganadería de Catamarca</p>
+          <p class="timeline-desc">
+            Diseño y desarrollo de un sistema interno para digitalizar los registros físicos de
+            marcas, señales y movimientos ganaderos. Reemplaza libros físicos con una plataforma
+            web segura con roles y trazabilidad completa.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Python</span>
+            <span class="timeline-tag">Django</span>
+            <span class="timeline-tag">PostgreSQL</span>
+            <span class="timeline-tag">Bootstrap 5</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">🎓</div>
+        <div class="timeline-content">
+          <div class="timeline-period">2023 — 2025</div>
+          <h3 class="timeline-role">Tecnicatura Superior en Desarrollo de Software</h3>
+          <p class="timeline-org">Instituto San Martin, Catamarca</p>
+          <p class="timeline-desc">
+            Formación técnica en desarrollo de software: programación orientada a objetos,
+            base de datos relacionales, redes, sistemas operativos, metodologías ágiles y
+            desarrollo web full stack. Proyecto final: EduLink.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Python</span>
+            <span class="timeline-tag">Java</span>
+            <span class="timeline-tag">SQL</span>
+            <span class="timeline-tag">Redes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">📚</div>
+        <div class="timeline-content">
+          <div class="timeline-period">2023 — Presente</div>
+          <h3 class="timeline-role">Proyecto EduLink</h3>
+          <p class="timeline-org">Proyecto personal</p>
+          <p class="timeline-desc">
+            Desarrollo completo de una plataforma educativa que conecta alumnos y profesores.
+            Implementación de chat en tiempo real (WebSockets), mapas interactivos, agenda
+            compartida, control financiero y panel administrativo.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Django Channels</span>
+            <span class="timeline-tag">WebSockets</span>
+            <span class="timeline-tag">Leaflet.js</span>
+            <span class="timeline-tag">REST API</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">⚔️</div>
+        <div class="timeline-content">
+          <div class="timeline-period">Anterior</div>
+          <h3 class="timeline-role">Soldado — Escuadrón de Caballería</h3>
+          <p class="timeline-org">ESESC — Ejército Argentino, Catamarca</p>
+          <p class="timeline-desc">
+            Servicio militar en la Escuela de Suboficiales del Ejército Sargento Cabral.
+            Formación en disciplina, liderazgo, trabajo bajo presión y responsabilidad.
+            Valores que aplico cada día en el trabajo técnico.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Liderazgo</span>
+            <span class="timeline-tag">Trabajo en equipo</span>
+            <span class="timeline-tag">Disciplina</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="section-num">05</div>
+  <div class="container">
+    <p class="section-label reveal">Contacto</p>
+    <h2 class="section-title reveal">Hablemos</h2>
+    <p class="section-subtitle reveal">
+      Abierto a oportunidades laborales, colaboraciones en proyectos o simplemente hablar de tech.
+      ¡No dudes en escribirme!
+    </p>
+
+    <div class="contact-wrapper">
+      <!-- Links -->
+      <div>
+        <p style="color:var(--text-secondary); margin-bottom:0.5rem; font-size:0.95rem;" class="reveal">
+          Podés encontrarme en estas plataformas o mandarme un mensaje directo.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:veliznelson041@gmail.com"
+             class="contact-link-card reveal"
+             data-copy-email>
+            <span class="contact-link-icon">📧</span>
+            <div class="contact-link-info">
+              <div class="contact-link-platform">Email</div>
+              <div class="contact-link-value">veliznelson041@gmail.com</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/nelson-fernando-veliz-395423283/"
+             target="_blank" rel="noopener"
+             class="contact-link-card reveal">
+            <span class="contact-link-icon">💼</span>
+            <div class="contact-link-info">
+              <div class="contact-link-platform">LinkedIn</div>
+              <div class="contact-link-value">nelson-fernando-veliz</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+
+          <a href="https://github.com/Veliznelson041"
+             target="_blank" rel="noopener"
+             class="contact-link-card reveal">
+            <span class="contact-link-icon">🐙</span>
+            <div class="contact-link-info">
+              <div class="contact-link-platform">GitHub</div>
+              <div class="contact-link-value">Veliznelson041</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+
+          <a href="https://www.instagram.com/Veliznelson04"
+             target="_blank" rel="noopener"
+             class="contact-link-card reveal">
+            <span class="contact-link-icon">📸</span>
+            <div class="contact-link-info">
+              <div class="contact-link-platform">Instagram</div>
+              <div class="contact-link-value">@Veliznelson04</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="name">Nombre</label>
+            <input type="text" id="name" name="name" class="form-input"
+                   placeholder="Tu nombre completo" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-input"
+                   placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subject">Asunto</label>
+            <input type="text" id="subject" name="subject" class="form-input"
+                   placeholder="¿De qué se trata?" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Mensaje</label>
+            <textarea id="message" name="message" class="form-textarea"
+                      placeholder="Contame tu idea o propuesta..." required></textarea>
+          </div>
+          <button type="submit" class="form-btn">Enviar mensaje →</button>
+          <p id="form-success" class="form-success">✓ ¡Mensaje enviado! Te respondo pronto.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <p class="footer-text">
+      Diseñado y desarrollado por
+      <span>Nelson Fernando Veliz</span>
+      &nbsp;·&nbsp; Catamarca, Argentina
+      &nbsp;·&nbsp;
+      <a href="https://github.com/Veliznelson041" target="_blank" rel="noopener"
+         style="color:var(--accent-teal)">GitHub</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ── Scripts (load order matters) ──────────── -->
+<script src="js/projects.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
