@@ -42,7 +42,7 @@
 <header id="navbar" role="banner">
   <div class="container">
     <nav class="nav-inner" aria-label="Navegación principal">
-      <a href="#hero" class="nav-logo">nv<span>.</span>dev</a>
+      <a href="#hero" class="nav-logo">nfv<span>.</span>dev</a>
 
       <ul class="nav-links" role="list">
         <li><a href="#about">Sobre mí</a></li>
@@ -132,7 +132,7 @@
             <span class="t-line" data-delay="1100"><span class="t-comment">{</span></span>
             <span class="t-line" data-delay="1300">
               &nbsp;&nbsp;<span class="t-key">"name"</span>:
-              <span class="t-string"> "Nelson Fernando Veliz"</span>,
+              <span class="t-string"> "Nelson Veliz"</span>,
             </span>
             <span class="t-line" data-delay="1450">
               &nbsp;&nbsp;<span class="t-key">"age"</span>:
@@ -543,21 +543,15 @@
 
       <!-- Form -->
       <div class="reveal">
-        <!--
-          data-netlify="true"  → Netlify captura las submissions automáticamente
-          netlify-honeypot      → Campo trampa invisible para bots (antispam)
-          name="contact"        → Nombre del formulario en el panel de Netlify
-        -->
+        
         <form id="contact-form" class="contact-form" novalidate
               name="contact"
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field">
 
-          <!-- Campo oculto requerido por Netlify Forms -->
           <input type="hidden" name="form-name" value="contact" />
 
-          <!-- Honeypot: trampa para bots — invisible para humanos -->
           <div style="display:none" aria-hidden="true">
             <label>No completar si sos humano:
               <input name="bot-field" tabindex="-1" autocomplete="off" />
