@@ -10,24 +10,18 @@
   <meta property="og:type"        content="website" />
   <title>Nelson Veliz — Portfolio</title>
 
-  <!-- Styles -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/components.css" />
-
-  <!-- Favicon inline -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
 </head>
 <body>
 
-<!-- ── Background Elements ───────────────────── -->
 <div class="grid-bg"></div>
 <div class="scanline-overlay"></div>
-<div class="cursor-dot"></div>
-<div class="cursor-ring"></div>
 <button id="back-to-top" aria-label="Volver arriba">↑</button>
 
-<!-- ── Mobile Menu ───────────────────────────── -->
+<!-- Mobile Menu -->
 <nav class="mobile-menu" role="dialog" aria-label="Menú móvil">
   <a href="#about">Sobre mí</a>
   <a href="#skills">Skills</a>
@@ -36,14 +30,11 @@
   <a href="#contact">Contacto</a>
 </nav>
 
-<!-- ═══════════════════════════════════════════
-     NAVBAR
-════════════════════════════════════════════ -->
+<!-- NAVBAR -->
 <header id="navbar" role="banner">
   <div class="container">
     <nav class="nav-inner" aria-label="Navegación principal">
       <a href="#hero" class="nav-logo">nfv<span>.</span>dev</a>
-
       <ul class="nav-links" role="list">
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -51,7 +42,6 @@
         <li><a href="#experience">Experiencia</a></li>
         <li><a href="#contact" class="nav-cta">Contacto</a></li>
       </ul>
-
       <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -59,9 +49,7 @@
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════
-     HERO
-════════════════════════════════════════════ -->
+<!-- HERO -->
 <section id="hero" aria-label="Presentación">
   <div class="hero-glow glow-teal"></div>
   <div class="hero-glow glow-violet"></div>
@@ -87,8 +75,8 @@
 
         <p class="hero-description">
           Técnico Superior en Desarrollo de Software. Construyo plataformas web reales con
-          <strong>Python, Django y PostgreSQL</strong>. Apasionado por la ciberseguridad, el OSINT
-          y la automatización. Catamarca, Argentina 🇦🇷
+          <strong>Python, Django y PostgreSQL</strong>. Apasionado por la ciberseguridad,
+          el OSINT y la automatización. Catamarca, Argentina 🇦🇷
         </p>
 
         <div class="hero-actions">
@@ -101,8 +89,8 @@
 
         <div class="hero-stats">
           <div>
-            <span class="hero-stat-num" data-count="3" data-suffix="">3</span>
-            <span class="hero-stat-label">Proyectos<br/>completados</span>
+            <span class="hero-stat-num" data-count="5" data-suffix="+">5+</span>
+            <span class="hero-stat-label">Proyectos<br/>reales</span>
           </div>
           <div>
             <span class="hero-stat-num" data-count="23" data-suffix="">23</span>
@@ -115,63 +103,70 @@
         </div>
       </div>
 
-      <!-- Right: Terminal -->
+      <!-- Right: Dev Identity Card (NO terminal) -->
       <div class="hero-right">
-        <div class="hero-terminal" role="img" aria-label="Terminal con información de Nelson Veliz">
-          <div class="terminal-bar">
-            <span class="terminal-dot dot-red"></span>
-            <span class="terminal-dot dot-yellow"></span>
-            <span class="terminal-dot dot-green"></span>
-            <span class="terminal-title">nelson@portfolio ~ whoami</span>
+        <div class="dev-card" id="dev-card">
+          <!-- Corner brackets decorativos -->
+          <div class="dc-corner tl"></div>
+          <div class="dc-corner tr"></div>
+          <div class="dc-corner bl"></div>
+          <div class="dc-corner br"></div>
+          <!-- Capa shimmer hover -->
+          <div class="dc-shimmer"></div>
+
+          <div class="dc-id-tag">DEV · NV2025 · ARG</div>
+
+          <!-- Avatar -->
+          <div class="dc-avatar-wrap">
+            <div class="dc-avatar">NV</div>
+            <div class="dc-ring r1"></div>
+            <div class="dc-ring r2"></div>
           </div>
-          <div class="terminal-body">
-            <span class="t-line" data-delay="800">
-              <span class="t-prompt">$</span>
-              <span class="t-cmd"> cat profile.json</span>
-            </span>
-            <span class="t-line" data-delay="1100"><span class="t-comment">{</span></span>
-            <span class="t-line" data-delay="1300">
-              &nbsp;&nbsp;<span class="t-key">"name"</span>:
-              <span class="t-string"> "Nelson Veliz"</span>,
-            </span>
-            <span class="t-line" data-delay="1450">
-              &nbsp;&nbsp;<span class="t-key">"age"</span>:
-              <span class="t-val"> 23</span>,
-            </span>
-            <span class="t-line" data-delay="1600">
-              &nbsp;&nbsp;<span class="t-key">"location"</span>:
-              <span class="t-string"> "Catamarca, ARG 🇦🇷"</span>,
-            </span>
-            <span class="t-line" data-delay="1750">
-              &nbsp;&nbsp;<span class="t-key">"role"</span>:
-              <span class="t-string"> "Full Stack Developer"</span>,
-            </span>
-            <span class="t-line" data-delay="1900">
-              &nbsp;&nbsp;<span class="t-key">"stack"</span>:
-              <span class="t-comment"> [</span>
-            </span>
-            <span class="t-line" data-delay="2050">
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"Python"</span>,
-              <span class="t-string"> "Django"</span>,
-              <span class="t-string"> "PostgreSQL"</span>
-            </span>
-            <span class="t-line" data-delay="2200">
-              &nbsp;&nbsp;<span class="t-comment">],</span>
-            </span>
-            <span class="t-line" data-delay="2350">
-              &nbsp;&nbsp;<span class="t-key">"interests"</span>:
-              <span class="t-string"> ["Ciberseguridad", "OSINT"]</span>,
-            </span>
-            <span class="t-line" data-delay="2500">
-              &nbsp;&nbsp;<span class="t-key">"status"</span>:
-              <span class="t-string"> "available ✅"</span>
-            </span>
-            <span class="t-line" data-delay="2650"><span class="t-comment">}</span></span>
-            <span class="t-line" data-delay="2900">
-              <span class="t-prompt">$</span>
-              <span class="t-cmd"> _</span>
-              <span class="cursor-blink">|</span>
-            </span>
+
+          <!-- Identidad -->
+          <div class="dc-identity">
+            <h2 class="dc-name">Nelson Veliz</h2>
+            <div class="dc-role">Full Stack Developer</div>
+            <div class="dc-loc">📍 Catamarca, Argentina</div>
+          </div>
+
+          <!-- Stats -->
+          <div class="dc-stats">
+            <div class="dc-stat"><b>5+</b><span>Proyectos</span></div>
+            <div class="dc-stat"><b>5+</b><span>Lenguajes</span></div>
+            <div class="dc-stat"><b>2+</b><span>Años dev</span></div>
+          </div>
+
+          <!-- Skill bars -->
+          <div class="dc-skills">
+            <div class="dc-skill">
+              <span>Python / Django</span>
+              <div class="dc-bar"><div class="dc-fill" data-width="95"></div></div>
+            </div>
+            <div class="dc-skill">
+              <span>PostgreSQL</span>
+              <div class="dc-bar"><div class="dc-fill" data-width="85"></div></div>
+            </div>
+            <div class="dc-skill">
+              <span>JavaScript</span>
+              <div class="dc-bar"><div class="dc-fill" data-width="78"></div></div>
+            </div>
+            <div class="dc-skill">
+              <span>Ciberseguridad</span>
+              <div class="dc-bar"><div class="dc-fill" data-width="52"></div></div>
+            </div>
+          </div>
+
+          <!-- Footer card -->
+          <div class="dc-footer">
+            <div class="dc-status">
+              <span class="dc-dot"></span>
+              Disponible
+            </div>
+            <a href="https://github.com/Veliznelson041" target="_blank" rel="noopener" class="dc-gh-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
           </div>
         </div>
       </div>
@@ -180,32 +175,43 @@
   </div>
 </section>
 
-<!-- ── Tech Strip ─────────────────────────────── -->
-<div class="tech-strip" aria-hidden="true">
-  <div class="tech-strip-inner">
-    <span class="tech-strip-item"><span class="strip-dot"></span>Python</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Django</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>PostgreSQL</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>JavaScript</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Bootstrap 5</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>REST API</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>WebSockets</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Leaflet.js</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Chart.js</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Git</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Linux</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Nginx</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Gunicorn</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>Maltego</span>
-    <span class="tech-strip-item"><span class="strip-dot"></span>OSINT</span>
+<!-- TECH WALL (reemplaza el boring scroll strip) -->
+<div class="tech-wall" aria-label="Stack tecnológico">
+  <div class="container">
+    <div class="tw-legend">
+      <span class="tw-leg-item tw-backend">Backend</span>
+      <span class="tw-leg-item tw-frontend">Frontend</span>
+      <span class="tw-leg-item tw-db">Base de Datos</span>
+      <span class="tw-leg-item tw-tools">Herramientas</span>
+      <span class="tw-leg-item tw-security">Seguridad</span>
+    </div>
+    <div class="tw-grid">
+      <span class="tw-badge tw-backend"  style="--d:0.0s">Python</span>
+      <span class="tw-badge tw-backend"  style="--d:0.4s">Django</span>
+      <span class="tw-badge tw-backend"  style="--d:0.8s">REST API</span>
+      <span class="tw-badge tw-backend"  style="--d:1.2s">WebSockets</span>
+      <span class="tw-badge tw-backend"  style="--d:0.6s">Gunicorn</span>
+      <span class="tw-badge tw-frontend" style="--d:0.2s">JavaScript</span>
+      <span class="tw-badge tw-frontend" style="--d:0.5s">HTML5 / CSS3</span>
+      <span class="tw-badge tw-frontend" style="--d:0.9s">Bootstrap 5</span>
+      <span class="tw-badge tw-frontend" style="--d:1.1s">Chart.js</span>
+      <span class="tw-badge tw-frontend" style="--d:0.3s">Leaflet.js</span>
+      <span class="tw-badge tw-db"       style="--d:0.1s">PostgreSQL</span>
+      <span class="tw-badge tw-db"       style="--d:0.7s">MySQL</span>
+      <span class="tw-badge tw-tools"    style="--d:0.35s">Git</span>
+      <span class="tw-badge tw-tools"    style="--d:0.65s">Linux</span>
+      <span class="tw-badge tw-tools"    style="--d:1.0s">Nginx</span>
+      <span class="tw-badge tw-tools"    style="--d:0.45s">VS Code</span>
+      <span class="tw-badge tw-security" style="--d:0.15s">Maltego</span>
+      <span class="tw-badge tw-security" style="--d:0.55s">OSINT</span>
+      <span class="tw-badge tw-security" style="--d:0.95s">Ethical Hacking</span>
+    </div>
   </div>
 </div>
 
 <div class="section-divider"></div>
 
-<!-- ═══════════════════════════════════════════
-     ABOUT
-════════════════════════════════════════════ -->
+<!-- ABOUT -->
 <section id="about">
   <div class="section-num">01</div>
   <div class="container">
@@ -216,31 +222,25 @@
       <div class="about-text">
         <p class="reveal">
           Hola, soy <strong>Nelson</strong>, tengo <strong>23 años</strong> y soy de
-          <strong>Catamarca, Argentina</strong>. Me recibi de 
+          <strong>Catamarca, Argentina</strong>. Me recibí de
           <strong>Técnico Superior en Desarrollo de Software</strong>.
         </p>
         <p class="reveal">
           Me dedico al desarrollo de software desde hace varios años, especializándome en el stack
           <strong>Python / Django / PostgreSQL</strong>. He construido proyectos reales: una plataforma
-          educativa completa (<strong>EduLink</strong>). Un sistema de gestión ganadera para el
-          gobierno provincial (<strong>SIGRAMS</strong>). Un sistema para una <strong>PLAYA DE ESTACIONAMIENTO</strong>.
-           Una Landing Page para una banda de musica (<strong>VIENTOS DEL SUR</strong>), Entre otros.
+          educativa (<strong>EduLink</strong>), un sistema de gestión ganadera para el gobierno provincial
+          (<strong>SIGRAMS</strong>), un sistema para una <strong>Playa de Estacionamiento</strong>,
+          una Landing Page para una banda (<strong>Vientos del Sur</strong>), entre otros.
         </p>
-        <!-- <p class="reveal">
-          Actualmente trabajo en <strong>MAEMA</strong>, donde me encargo del mantenimiento y
-          soporte técnico de hardware y software, además de colaborar en el desarrollo de sistemas
-          internos y automatizaciones con herramientas como <strong>Trello</strong> y
-          <strong>AppSheets</strong>.
-        </p> -->
         <p class="reveal">
           Tengo un gran interés en la <strong>ciberseguridad</strong>, el OSINT y el forense
-          digital. Estoy aprendiendo <strong>Maltego</strong> y Ethical Hacking. Mi objetivo sería
-          complementar mi tecnicatura y obtener un titulo de grado.
+          digital. Estoy aprendiendo <strong>Maltego</strong> y Ethical Hacking. Mi objetivo es
+          complementar mi tecnicatura con un título de grado en el ámbito informático.
         </p>
         <p class="reveal">
           Antes de dedicarme al mundo tech, serví como <strong>militar en el Escuadrón de
-          Caballería del Ejército Argentino (ESESC)</strong>, experiencia que me dio disciplina,
-          trabajo en equipo y capacidad de resolver problemas bajo presión.
+          Caballería del Ejército Argentino (ESESC)</strong> — experiencia que me dio disciplina,
+          capacidad de trabajo bajo presión y mentalidad de resolver problemas.
         </p>
 
         <div class="about-badges reveal">
@@ -248,8 +248,6 @@
           <span class="badge">🎓 Técnico Superior</span>
           <span class="badge">⚔️ Ex-Militar Ejército AR</span>
           <span class="badge">🔐 Ciberseguridad & OSINT</span>
-          <!-- <span class="badge">💼 MAEMA</span>
-          <span class="badge">🚀 Buscando la universidad</span> -->
         </div>
       </div>
 
@@ -268,13 +266,6 @@
             <div class="info-value">Técnico Superior en Desarrollo de Software</div>
           </div>
         </div>
-        <!-- <div class="info-card reveal">
-          <div class="info-icon">💼</div>
-          <div class="info-content">
-            <div class="info-label">Trabajo actual</div>
-            <div class="info-value">MAEMA — Soporte Técnico & Dev</div>
-          </div>
-        </div> -->
         <div class="info-card reveal">
           <div class="info-icon">⚙️</div>
           <div class="info-content">
@@ -306,9 +297,7 @@
 
 <div class="section-divider"></div>
 
-<!-- ═══════════════════════════════════════════
-     SKILLS
-════════════════════════════════════════════ -->
+<!-- SKILLS -->
 <section id="skills">
   <div class="section-num">02</div>
   <div class="container">
@@ -329,11 +318,21 @@
   </div>
 </section>
 
+<!-- GAME TRIGGER — entre skills y proyectos -->
+<div class="game-trigger-section">
+  <div class="container">
+    <div class="game-trigger-inner">
+      <p class="game-trigger-label">Easter egg desbloqueado</p>
+      <button class="game-trigger-btn" id="open-game">
+        🐛 Bug Hunt — ¿Cuántos podés atrapar en 20 segundos?
+      </button>
+    </div>
+  </div>
+</div>
+
 <div class="section-divider"></div>
 
-<!-- ═══════════════════════════════════════════
-     PROJECTS
-════════════════════════════════════════════ -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="section-num">03</div>
   <div class="container">
@@ -355,9 +354,7 @@
 
 <div class="section-divider"></div>
 
-<!-- ═══════════════════════════════════════════
-     EXPERIENCE
-════════════════════════════════════════════ -->
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-num">04</div>
   <div class="container">
@@ -368,7 +365,6 @@
     </p>
 
     <div class="timeline">
-
       <div class="timeline-item">
         <div class="timeline-dot">💼</div>
         <div class="timeline-content">
@@ -377,8 +373,7 @@
           <p class="timeline-org">MAEMA — Dirección de Sistemas, Catamarca</p>
           <p class="timeline-desc">
             Mantenimiento y reparación de equipos de oficina (PCs, impresoras, switches, routers).
-            Desarrollo del sistema de gestión del canon de riego. Automatizaciones con Trello
-            y AppSheets para el área administrativa.
+            Desarrollo del sistema de gestión del canon de riego. Automatizaciones con Trello y AppSheets.
           </p>
           <div class="timeline-tags">
             <span class="timeline-tag">Django</span>
@@ -398,8 +393,7 @@
           <p class="timeline-org">Dirección de Ganadería de Catamarca</p>
           <p class="timeline-desc">
             Diseño y desarrollo de un sistema interno para digitalizar los registros físicos de
-            marcas, señales y movimientos ganaderos. Reemplaza libros físicos con una plataforma
-            web segura con roles y trazabilidad completa.
+            marcas, señales y movimientos ganaderos. Reemplaza libros físicos con trazabilidad completa.
           </p>
           <div class="timeline-tags">
             <span class="timeline-tag">Python</span>
@@ -417,9 +411,8 @@
           <h3 class="timeline-role">Tecnicatura Superior en Desarrollo de Software</h3>
           <p class="timeline-org">Instituto Educativo, Catamarca</p>
           <p class="timeline-desc">
-            Formación técnica en desarrollo de software: programación orientada a objetos,
-            base de datos relacionales, redes, sistemas operativos, metodologías ágiles y
-            desarrollo web full stack. Proyecto final: EduLink.
+            Formación técnica: POO, bases de datos relacionales, redes, sistemas operativos,
+            metodologías ágiles y desarrollo web full stack. Proyecto final: EduLink.
           </p>
           <div class="timeline-tags">
             <span class="timeline-tag">Python</span>
@@ -437,9 +430,8 @@
           <h3 class="timeline-role">Proyecto EduLink</h3>
           <p class="timeline-org">Proyecto personal</p>
           <p class="timeline-desc">
-            Desarrollo completo de una plataforma educativa que conecta alumnos y profesores.
-            Implementación de chat en tiempo real (WebSockets), mapas interactivos, agenda
-            compartida, control financiero y panel administrativo.
+            Plataforma educativa completa que conecta alumnos y profesores. Chat en tiempo real,
+            mapas interactivos, agenda compartida, control financiero y panel administrativo.
           </p>
           <div class="timeline-tags">
             <span class="timeline-tag">Django Channels</span>
@@ -457,9 +449,8 @@
           <h3 class="timeline-role">Soldado — Escuadrón de Caballería</h3>
           <p class="timeline-org">ESESC — Ejército Argentino, Catamarca</p>
           <p class="timeline-desc">
-            Servicio militar en la Escuela de Suboficiales del Ejército Sargento Cabral.
-            Formación en disciplina, liderazgo, trabajo bajo presión y responsabilidad.
-            Valores que aplico cada día en el trabajo técnico.
+            Servicio en la Escuela de Suboficiales del Ejército Sargento Cabral. Disciplina,
+            liderazgo, trabajo bajo presión — valores que aplico cada día en el desarrollo.
           </p>
           <div class="timeline-tags">
             <span class="timeline-tag">Liderazgo</span>
@@ -468,37 +459,29 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- ═══════════════════════════════════════════
-     CONTACT
-════════════════════════════════════════════ -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="section-num">05</div>
   <div class="container">
     <p class="section-label reveal">Contacto</p>
     <h2 class="section-title reveal">Hablemos</h2>
     <p class="section-subtitle reveal">
-      Abierto a oportunidades laborales, colaboraciones en proyectos o simplemente hablar de tech.
-      ¡No dudes en escribirme!
+      Abierto a oportunidades laborales, colaboraciones o simplemente hablar de tech.
     </p>
 
     <div class="contact-wrapper">
-      <!-- Links -->
       <div>
-        <p style="color:var(--text-secondary); margin-bottom:0.5rem; font-size:0.95rem;" class="reveal">
+        <p style="color:var(--text-secondary);margin-bottom:0.5rem;font-size:0.95rem;" class="reveal">
           Podés encontrarme en estas plataformas o mandarme un mensaje directo.
         </p>
-
         <div class="contact-links">
-          <a href="mailto:veliznelson041@gmail.com"
-             class="contact-link-card reveal"
-             data-copy-email>
+          <a href="mailto:veliznelson041@gmail.com" class="contact-link-card reveal" data-copy-email>
             <span class="contact-link-icon">📧</span>
             <div class="contact-link-info">
               <div class="contact-link-platform">Email</div>
@@ -506,10 +489,7 @@
             </div>
             <span class="contact-link-arrow">→</span>
           </a>
-
-          <a href="https://www.linkedin.com/in/nelson-fernando-veliz-395423283/"
-             target="_blank" rel="noopener"
-             class="contact-link-card reveal">
+          <a href="https://www.linkedin.com/in/nelson-fernando-veliz-395423283/" target="_blank" rel="noopener" class="contact-link-card reveal">
             <span class="contact-link-icon">💼</span>
             <div class="contact-link-info">
               <div class="contact-link-platform">LinkedIn</div>
@@ -517,10 +497,7 @@
             </div>
             <span class="contact-link-arrow">→</span>
           </a>
-
-          <a href="https://github.com/Veliznelson041"
-             target="_blank" rel="noopener"
-             class="contact-link-card reveal">
+          <a href="https://github.com/Veliznelson041" target="_blank" rel="noopener" class="contact-link-card reveal">
             <span class="contact-link-icon">🐙</span>
             <div class="contact-link-info">
               <div class="contact-link-platform">GitHub</div>
@@ -528,10 +505,7 @@
             </div>
             <span class="contact-link-arrow">→</span>
           </a>
-
-          <a href="https://www.instagram.com/Veliznelson04"
-             target="_blank" rel="noopener"
-             class="contact-link-card reveal">
+          <a href="https://www.instagram.com/Veliznelson04" target="_blank" rel="noopener" class="contact-link-card reveal">
             <span class="contact-link-icon">📸</span>
             <div class="contact-link-info">
               <div class="contact-link-platform">Instagram</div>
@@ -542,75 +516,49 @@
         </div>
       </div>
 
-      <!-- Form -->
+      <!-- FORM — usa FormSubmit.co, no Netlify Forms -->
       <div class="reveal">
-        
-        <form id="contact-form" class="contact-form" novalidate
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field">
-
-          <input type="hidden" name="form-name" value="contact" />
-
+        <form id="contact-form" class="contact-form" novalidate>
+          <!-- Honeypot antispam (invisible para humanos) -->
           <div style="display:none" aria-hidden="true">
-            <label>No completar si sos humano:
-              <input name="bot-field" tabindex="-1" autocomplete="off" />
-            </label>
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="name">Nombre</label>
-            <input type="text" id="name" name="name" class="form-input"
-                   placeholder="Tu nombre completo"
-                   autocomplete="name"
-                   minlength="2" maxlength="80"
-                   required />
+            <label class="form-label" for="f-name">Nombre</label>
+            <input type="text" id="f-name" name="name" class="form-input"
+                   placeholder="Tu nombre completo" autocomplete="name"
+                   minlength="2" maxlength="80" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="email">Email</label>
-            <input type="email" id="email" name="email" class="form-input"
-                   placeholder="tu@email.com"
-                   autocomplete="email"
-                   maxlength="120"
-                   required />
+            <label class="form-label" for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" class="form-input"
+                   placeholder="tu@email.com" autocomplete="email"
+                   maxlength="120" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="subject">Asunto</label>
-            <input type="text" id="subject" name="subject" class="form-input"
-                   placeholder="¿De qué se trata?"
-                   maxlength="120"
-                   required />
+            <label class="form-label" for="f-subject">Asunto</label>
+            <input type="text" id="f-subject" name="subject" class="form-input"
+                   placeholder="¿De qué se trata?" maxlength="120" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="message">Mensaje</label>
-            <textarea id="message" name="message" class="form-textarea"
+            <label class="form-label" for="f-message">Mensaje</label>
+            <textarea id="f-message" name="message" class="form-textarea"
                       placeholder="Contame tu idea o propuesta..."
-                      minlength="10" maxlength="2000"
-                      required></textarea>
+                      minlength="10" maxlength="2000" required></textarea>
           </div>
+          <p id="char-counter" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);text-align:right;margin-top:-0.75rem;margin-bottom:1rem;">0 / 2000</p>
 
-          <!-- Indicador de caracteres restantes -->
-          <p id="char-counter" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);text-align:right;margin-top:-0.75rem;margin-bottom:1rem;">
-            0 / 2000
-          </p>
-
-          <button type="submit" class="form-btn" id="form-submit-btn">
-            Enviar mensaje →
-          </button>
+          <button type="submit" class="form-btn" id="form-submit-btn">Enviar mensaje →</button>
           <p id="form-success" class="form-success">✓ ¡Mensaje enviado! Te respondo pronto.</p>
-          <p id="form-error" class="form-success" style="color:#f87171;display:none;">
-            ✗ Algo salió mal. Por favor intentá de nuevo.
-          </p>
+          <p id="form-error"   class="form-success" style="color:#f87171;display:none;">✗ Algo salió mal. Intentá de nuevo.</p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer role="contentinfo">
   <div class="container">
     <p class="footer-text">
@@ -618,16 +566,44 @@
       <span>Nelson Fernando Veliz</span>
       &nbsp;·&nbsp; Catamarca, Argentina
       &nbsp;·&nbsp;
-      <a href="https://github.com/Veliznelson041" target="_blank" rel="noopener"
-         style="color:var(--accent-teal)">GitHub</a>
+      <a href="https://github.com/Veliznelson041" target="_blank" rel="noopener" style="color:var(--accent-teal)">GitHub</a>
     </p>
   </div>
 </footer>
 
-<!-- ── Scripts (load order matters) ──────────── -->
+<!-- BUG HUNT GAME MODAL -->
+<div class="game-modal" id="game-modal" role="dialog" aria-modal="true" aria-label="Bug Hunt">
+  <div class="game-box">
+    <button class="game-close" id="game-close" aria-label="Cerrar juego">✕</button>
+
+    <div id="game-intro">
+      <h3 class="game-title">🐛 Bug Hunt</h3>
+      <p class="game-desc">
+        Los bugs aparecen y desaparecen en el grid.<br/>
+        Hacé click para atraparlos antes de que escapen.<br/>
+        <strong>20 segundos. ¿Cuántos podés atrapar?</strong>
+      </p>
+      <button class="game-start-btn" id="game-start">Comenzar</button>
+    </div>
+
+    <div id="game-play" style="display:none">
+      <div class="game-hud">
+        <div class="game-hud-item">🐛 <span id="g-score">0</span></div>
+        <div class="game-hud-item">⏱ <span id="g-timer">20</span>s</div>
+      </div>
+      <div class="game-grid" id="game-grid"></div>
+    </div>
+
+    <div id="game-result" style="display:none">
+      <div class="game-result-score" id="g-final-score"></div>
+      <p class="game-result-msg" id="g-result-msg"></p>
+      <button class="game-start-btn" id="game-restart">Jugar de nuevo</button>
+    </div>
+  </div>
+</div>
+
 <script src="js/projects.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/main.js"></script>
-
 </body>
 </html>
